@@ -19,7 +19,9 @@ from sklearn.impute import SimpleImputer
 import os
 
 def load_data():
-    df = pd.read_csv('online_gaming_behavior_dataset.csv')
+    dir_path = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(dir_path, "online_gaming_behavior_dataset.csv")
+    df = pd.read_csv(file_path)
     df = df.drop(columns=['PlayerID'])
     return df
 
