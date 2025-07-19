@@ -89,5 +89,5 @@ with st.form('Prediction Form'):
 if submitted:
     input_df = pd.DataFrame([input_data])
     prediction = final_pipeline.predict(input_df)[0]
-    st.success(f'Estimated Median Prediction : **${prediction}**')
+    st.success(f'Estimated Median Prediction : **{prediction}**')
 
