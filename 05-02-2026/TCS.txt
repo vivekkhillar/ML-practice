@@ -1,0 +1,45 @@
+"Hi, I'm Vivek Khillar. I have over 4 years of experience at JioPlatforms Limited, where I work extensively with Python and SQL for data analysis and machine learning. My core expertise lies in data cleaning, data visualization, and building ML models that drive business decisions. I've developed predictive models that have helped solve critical business problems and optimize operations. Recently, I've been working with Large Language Models to automate processes and reduce manual effort. I'm excited about this opportunity at TCS to further leverage my ML skills on challenging projects."
+
+
+1. Explain the difference between supervised, unsupervised, and reinforcement learning with examples
+
+Supervised : supervised learning, the model is trained on labeled data where each input has a corresponding output/target. The model learns the mapping function from input to output and uses 	     this to make predictions on new, unseen data.
+Unsupervised: In unsupervised learning, the model works with unlabeled data to discover hidden patterns, structures, or relationships. The goal is to find inherent groupings or reduce 	     dimensionality, not necessarily to make predictions
+Reinforcement: In reinforcement learning, an agent learns to make decisions by interacting with an environment. It receives rewards for good actions and penalties for bad ones. Through trial 	     and error, the agent learns an optimal policy to maximize cumulative reward over time."
+
+
+2. What is overfitting and underfitting? How do you detect and prevent them?
+
+Due to high bias the Underfitting happen where model not learned well on the training data for which fails to predicting unseen data
+Due to high varriance the overfitting happen where model learned well on the training data for which fails to predicting unseen data
+Using the L1 and L2 regularization we can reduce the overfitting of the model and by Increase model complexity will help to reduce the underfitting
+
+3. Explain bias-variance tradeoff with real-world examples
+
+Bias-variance tradeoff is about balancing model complexity. Bias is error from oversimplification - high bias leads to underfitting where the model performs poorly on all data. Variance is error from over-sensitivity to training data - high variance leads to overfitting where the model excels on training but fails on new data.
+
+In my work at Jio, I encountered this when building calculate insurance model. A simple linear model had high bias - only 65% accuracy because it was too simplistic. A complex deep tree had high variance - 98% on training but 70% on test because it memorized noise. The solution was Random Forest with proper tuning, achieving 85% on both sets.The key is finding the sweet spot: complex enough to capture patterns but simple enough to generalize. I use learning curves, cross-validation, and regularization to achieve this balance
+
+
+4. Explain precision, recall, F1-score, and when to optimize for each
+
+Precision = TP/(TP+FP) answers 'of all positive predictions, how many are correct?' - optimize for precision in spam detection where false positives are costly. Recall = TP/(TP+FN) answers 'of all actual positives, how many did we catch?' - optimize for recall in fraud detection where missing fraud is expensive. F1-score is the harmonic mean - use when you need a single metric. The choice depends on business cost: if false positives are costly, use precision; if false negatives are costly, use recall.
+
+5. What is ROC-AUC? How do you interpret it?
+
+ROC-AUC is used for imbalanced data. ROC curve plots True Positive Rate (TPR) on Y-axis vs False Positive Rate (FPR) on X-axis. AUC is the area under this curve, ranging 0-1. AUC = 0.5 means random guessing, 0.7-0.8 is good, 0.9+ is excellent. The closer to 1, the better the model performs. Use ROC-AUC for imbalanced classification when you care about ranking predictions.
+
+6. Explain confusion matrix and its components
+
+Confusion matrix is a 2x2 table showing model predictions vs actual values with four components: True Positive (predicted yes, actually yes), False Positive (predicted yes, actually no), True Negative (predicted no, actually no), False Negative (predicted no, actually yes). Example: Bank loan approval - out of 100 people, if 40 actually get loans: TP=35 (model correctly predicted yes), FP=5 (model wrongly predicted yes), TN=50 (model correctly predicted no), FN=5 (model wrongly predicted no). From this, we calculate precision, recall, and accuracy
+
+7. What are the assumptions of linear regression?
+
+Linear regression has 5 key assumptions: 1) Linearity - relationship between X and Y is linear, 2) Independence - observations are independent, 3) Homoscedasticity - constant variance of errors, 4) Normality - errors are normally distributed, 5) No multicollinearity - independent variables are not highly correlated. Violations: linearity violation means linear model won't fit curved data, multicollinearity causes unstable coefficients (fixed with L1/L2 regularization), heteroscedasticity causes unreliable confidence intervals. At Jio, I checked these assumptions using scatter plots, VIF analysis, and Q-Q plots before deploying regression models
+
+8. How does XGBoost work? What makes it better than traditional gradient boosting?
+
+"XGBoost is a sequential ensemble method that improves upon traditional gradient boosting by adding Regularization to prevent overfitting, using Second-Order Derivatives for faster convergence, and utilizing Parallel Computing to handle large-scale tabular data with extreme speed
+
+9. Explain SVM and kernel trick
+"SVM finds the optimal hyperplane that maximizes the margin between classes using Support Vectors. When data isn't linearly separable, we use the Kernel Trick. This mathematically maps the data into a higher dimension where a linear separation is possible, allowing the model to learn complex, non-linear boundaries efficiently."
