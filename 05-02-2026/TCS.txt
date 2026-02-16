@@ -43,3 +43,28 @@ Linear regression has 5 key assumptions: 1) Linearity - relationship between X a
 
 9. Explain SVM and kernel trick
 "SVM finds the optimal hyperplane that maximizes the margin between classes using Support Vectors. When data isn't linearly separable, we use the Kernel Trick. This mathematically maps the data into a higher dimension where a linear separation is possible, allowing the model to learn complex, non-linear boundaries efficiently."
+
+
+10. Kernel Trick:
+	Will use to improve the data into higher dimensions with out explicit computation
+
+11. Stacking -> use the Kfold cross validation during prediction of the model
+    blending -> use hold out data and remaining will sent to the model
+    voting -> use average the prediction of the models
+	hard voting - final prediction based on majority
+        soft voting - final prediction based on the average and pick the highest if average > 0.5 then assign 1 else  0
+
+12. Forward and Backward Propagation:
+
+	Forwards propagation is that the input goes through network and produce output
+        Backwards propagation is send the error backward adjust the weights to reduce mistake
+
+13. Activation function = Decision maker of neuron.
+    it includes sigmoid, RELU and Tanh
+    sigmoid -> 0-1
+    RELU -> 0 - infinity
+    Tanh -> -1 - 1
+
+14. 
+
+	
